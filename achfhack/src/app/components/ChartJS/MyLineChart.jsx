@@ -9,6 +9,15 @@ Chart.register(...registerables);
 const MyLineChart = ({ data }) => {
   const [chartData, setChartData] = useState(null);
 
+  const colors = [
+    "#4A90E2", // Blue shade 1
+    "#50E3C2", // Blue shade 2
+    "#9013FE", // Purple shade 1
+    "#BD10E0", // Purple shade 2
+    "#7B61FF", // Purple shade 3
+    "#5C9DF9", // Blue shade 3
+  ];
+
   useEffect(() => {
     if (data && data.length > 0) {
       const groupedData = data.reduce((acc, { date, rating, userId }) => {
@@ -21,14 +30,14 @@ const MyLineChart = ({ data }) => {
 
       console.log(groupedData);
 
-      const datasets = Object.keys(groupedData).map((userId) => ({
+      const datasets = Object.keys(groupedData).map((userId, index) => ({
         label: userId,
         data: groupedData[userId].map((entry) => ({
           x: entry.date,
           y: entry.rating,
         })),
         fill: false,
-        borderColor: getRandomColor(),
+        borderColor: colors[index % colors.length],
         tension: 0.1,
       }));
 
@@ -37,15 +46,6 @@ const MyLineChart = ({ data }) => {
       });
     }
   }, [data]);
-
-  const getRandomColor = () => {
-    const letters = "0123456789ABCDEF";
-    let color = "#";
-    for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-  };
 
   if (!chartData) {
     return <div>Loading...</div>;
