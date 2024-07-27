@@ -74,6 +74,7 @@ const MyLineChart = ({ data }) => {
           },
         },
       }}
+      style={{ height: "100%" }}
     />
   );
 };
