@@ -1,7 +1,7 @@
 import { Bubblegum_Sans } from "next/font/google";
 import "./globals.css";
 
-const bubblegumSans = Bubblegum_Sans({ subsets: ["latin"] });
+const bubblegumSans = Bubblegum_Sans({ subsets: ["latin"], weight: ["400"] });
 
 export const metadata = {
   title: "HealthBridge",
