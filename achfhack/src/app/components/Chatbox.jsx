@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRobot, faUser } from "@fortawesome/free-solid-svg-icons";
 
-import "@/app/globals.css";
+import "../globals.css";
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([]);
@@ -53,7 +53,8 @@ const Chatbot = () => {
         <div id="chat-log" className="flex-grow overflow-y-auto p-2 ">
           <div className="mt-2">
             <p className="ml-4 text-black">
-              Welcome to the chatbot, say hello!
+              👋 Say hello! The chatbot is here to help you. If you need help,
+              let the chatbot know and the doctor will be alerted.
             </p>
           </div>
           {messages.map((msg, index) => (
