@@ -1,7 +1,7 @@
-import { Bubblegum_Sans } from "next/font/google";
+import { Rubik } from "next/font/google";
 import "./globals.css";
 
-const bubblegumSans = Bubblegum_Sans({ subsets: ["latin"], weight: ["400"] });
+const rubik = Rubik({ subsets: ["latin"] });
 
 export const metadata = {
   title: "HealthBridge",
@@ -11,7 +11,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={bubblegumSans.className}>{children}</body>
+      <body className={rubik.className}>{children}</body>
     </html>
   );
 }
