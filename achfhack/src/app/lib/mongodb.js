@@ -2,6 +2,10 @@
 import { MongoClient } from "mongodb";
 
 const uri = process.env.MONGODB_URI;
+console.log("-------");
+console.log(uri);
+console.log(process.env.abc);
+console.log("-------");
 const options = {};
 
 let client;

@@ -2,16 +2,25 @@
 import { useState } from "react";
 
 export default function CheckupPage() {
-  const [formData, setFormData] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0]);
+  const [formData, setFormData] = useState({
+    Question1: "0",
+    Question2: "0",
+    Question3: "0",
+    Question4: "0",
+    Question5: "0",
+    Question6: "0",
+    Question7: "0",
+    Question8: "0",
+    Question9: "0",
+  });
 
   const handleChange = (e, key) => {
-    const newValue = parseInt(e.target.value); // Convert the selected option to a number
-    setFormData((prevFormData) => {
-      const newFormData = [...prevFormData];
-      newFormData[key] = newValue; // Update the specific index with the new value
-      return newFormData;
-    });
-    console.log(formData); // testing
+    const newValue = e.target.value; // Get the new value as a string
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [`Question${key + 1}`]: newValue, // Update the specific property with the new value
+    }));
+    console.log(formData);
   };
 
   const handleSubmit = async (e) => {
@@ -64,7 +73,7 @@ export default function CheckupPage() {
             return (
               <li className="flex flex-col" key={key}>
                 <div className="flex gap-2">
-                  <span>{key}.</span>
+                  <span>{key + 1}.</span>
                   {question}
                 </div>
                 <div className="flex justify-start items-center gap-5">
