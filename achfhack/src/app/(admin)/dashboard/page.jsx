@@ -1,3 +1,4 @@
+import HelpNeeded from "@/app/components/DoctorDashboard/HelpNeeded";
 import MyLineChart from "../../components/ChartJS/MyLineChart";
 
 export default function DashboardPage() {
@@ -69,7 +70,8 @@ export default function DashboardPage() {
         </div>
         <div className="w-full md:w-1/2 py-5 pl-3 rounded-xl">
           <div className="p-5 shadow-md rounded-md h-full">
-            <h2 className="text-xl font-bold">Top Right Component</h2>
+            <h2 className="text-xl font-bold">Help Needed</h2>
+            <HelpNeeded />
             <p>Placeholder content</p>
           </div>
         </div>
