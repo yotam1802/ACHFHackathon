@@ -1,6 +1,5 @@
 "use client";
 
-import { signOut } from "next-auth/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -113,7 +112,7 @@ export default function NavbarMenu() {
   );
 
   const pathname = usePathname();
-  const isActive = (path: string) => pathname === path;
+  const isActive = (path) => pathname === path;
 
   return (
     <ul className="flex lg:flex-col md:gap-3 justify-around w-full">
@@ -121,7 +120,9 @@ export default function NavbarMenu() {
         <Link
           href={"/dashboard"}
           data-tip="Home"
-          className={`tooltip lg:tooltip-right flex flex-col lg:flex-row ${isActive("/dashboard") ? "active" : ""} px-1 md:px-5 w-14 md:w-28 lg:w-full`}
+          className={`tooltip lg:tooltip-right flex flex-col lg:flex-row ${
+            isActive("/dashboard") ? "active" : ""
+          } px-1 md:px-5 w-14 md:w-28 lg:w-full`}
         >
           {homeIcon}
           <div className="invisible md:visible">Home</div>
@@ -131,7 +132,9 @@ export default function NavbarMenu() {
         <Link
           href={"/transactions"}
           data-tip="Transactions"
-          className={`tooltip lg:tooltip-right flex flex-col lg:flex-row ${isActive("/transactions") ? "active" : ""} px-1 md:px-5 w-14 md:w-28 lg:w-full`}
+          className={`tooltip lg:tooltip-right flex flex-col lg:flex-row ${
+            isActive("/transactions") ? "active" : ""
+          } px-1 md:px-5 w-14 md:w-28 lg:w-full`}
         >
           {banknoteIcon}
           <span className="invisible md:visible">Transactions</span>
@@ -141,7 +144,9 @@ export default function NavbarMenu() {
         <Link
           href={"/budget"}
           data-tip="Budget"
-          className={`tooltip lg:tooltip-right flex flex-col lg:flex-row ${isActive("/budget") ? "active" : ""} px-1 md:px-5 w-14 md:w-28 lg:w-full`}
+          className={`tooltip lg:tooltip-right flex flex-col lg:flex-row ${
+            isActive("/budget") ? "active" : ""
+          } px-1 md:px-5 w-14 md:w-28 lg:w-full`}
         >
           {walletIcon}
           <span className="invisible md:visible">Budget</span>
@@ -151,7 +156,9 @@ export default function NavbarMenu() {
         <Link
           href={"/reports"}
           data-tip="Reports"
-          className={`tooltip lg:tooltip-right flex flex-col lg:flex-row ${isActive("/reports") ? "active" : ""} px-1 md:px-5 w-14 md:w-28 lg:w-full`}
+          className={`tooltip lg:tooltip-right flex flex-col lg:flex-row ${
+            isActive("/reports") ? "active" : ""
+          } px-1 md:px-5 w-14 md:w-28 lg:w-full`}
         >
           {chartIcon}
           <span className="invisible md:visible">Reports</span>
@@ -161,7 +168,9 @@ export default function NavbarMenu() {
         <Link
           href={"/categories"}
           data-tip="Categories"
-          className={`tooltip lg:tooltip-right flex flex-col lg:flex-row ${isActive("/categories") ? "active" : ""} px-1 md:px-5 w-14 md:w-28 lg:w-full`}
+          className={`tooltip lg:tooltip-right flex flex-col lg:flex-row ${
+            isActive("/categories") ? "active" : ""
+          } px-1 md:px-5 w-14 md:w-28 lg:w-full`}
         >
           {tagIcon}
           <span className="invisible md:visible">Categories</span>
