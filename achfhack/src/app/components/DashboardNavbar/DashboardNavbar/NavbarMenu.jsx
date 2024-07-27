@@ -11,9 +11,9 @@ export default function NavbarMenu({ svgs }) {
 
   return (
     <ul className="flex lg:flex-col md:gap-3 justify-around w-full">
-      {svgs.map((svg) => {
+      {svgs.map((svg, key) => {
         return (
-          <li>
+          <li key={key}>
             <Link
               href={svg.route}
               data-tip={svg.name}

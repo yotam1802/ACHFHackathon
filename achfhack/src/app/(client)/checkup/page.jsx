@@ -1,9 +1,97 @@
+"use client";
+import { useState } from "react";
+
 export default function CheckupPage() {
+  const [formData, setFormData] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0]);
+
+  const handleChange = (e, key) => {
+    const newValue = parseInt(e.target.value); // Convert the selected option to a number
+    setFormData((prevFormData) => {
+      const newFormData = [...prevFormData];
+      newFormData[key] = newValue; // Update the specific index with the new value
+      return newFormData;
+    });
+    console.log(formData); // testing
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("/api/data", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        console.error("Error adding data:", response.statusText);
+        return;
+      }
+
+      const result = await response.json();
+      console.log(result);
+    } catch (error) {
+      console.error("Error parsing JSON:", error);
+    }
+  };
+
+  const questions = [
+    "Little interest or pleasure in doing things.",
+    "Feeling down, depressed, or hopeless.",
+    "Trouble falling or staying asleep, or sleeping too much.",
+    "Feeling tired or having little energy.",
+    "Poor appetite or overeating.",
+    "Feeling bad about yourself - or that you are a failure or have let yourself or your family down.",
+    "Trouble concentrating on things, such as reading the newspaper or watching television.",
+    "Moving or speaking so slowly that other people could have noticed? Or the opposite – being so fidgety or restless that you have been moving around a lot more than usual.",
+    "Thoughts that you would be better off dead or of hurting yourself in some way.",
+  ];
+
   return (
-    <div className="min-h-screen p-5 ">
+    <div className="min-h-screen p-5 flex flex-col gap-5 w-full mb-20 md:mb-10">
       <div className="p-5 bg-black rounded-xl">
         <h1 className="text-3xl font-bold text-white">Checkup Form</h1>
       </div>
+      <h3>
+        Over the last 2 weeks, how often have you been bothered by any of the
+        following problems?
+      </h3>
+      <form onSubmit={handleSubmit} className="w-full">
+        <ol className="w-full flex flex-col gap-5">
+          {questions.map((question, key) => {
+            return (
+              <li className="flex flex-col" key={key}>
+                <div className="flex gap-2">
+                  <span>{key}.</span>
+                  {question}
+                </div>
+                <div className="flex justify-start items-center gap-5">
+                  <select
+                    className="select select-bordered w-full max-w-2xl"
+                    value={formData[key]}
+                    onChange={(e) => handleChange(e, key)}
+                  >
+                    <option disabled selected>
+                      Select
+                    </option>
+                    <option value={0}>Not at all</option>
+                    <option value={1}>Several days</option>
+                    <option value={2}>More than half the days</option>
+                    <option value={3}>Nearly every day</option>
+                  </select>
+                </div>
+              </li>
+            );
+          })}
+        </ol>
+        <div className="mt-5 flex justify-center">
+          <button type="submit" className="btn btn-wide btn-primary">
+            Add Data
+          </button>
+        </div>
+      </form>
     </div>
   );
 }
