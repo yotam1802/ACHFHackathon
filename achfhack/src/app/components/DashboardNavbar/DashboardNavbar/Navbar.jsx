@@ -3,10 +3,10 @@ import profilePicPlaceholder from "../../../../../public/profile-pic-placeholder
 import SignoutButton from "./SignoutButton";
 import NavbarMenu from "./NavbarMenu";
 
-export default async function Navbar() {
+export default async function Navbar({ svgs }) {
   return (
     <div className="fixed bottom-0 left-0 right-0 h-16 md:h-20 rounded-t-box menu menu-horizontal bg-base-200 lg:menu-vertical lg:rounded-box lg:rounded-l-none lg:min-h-screen lg:w-56 lg:shadow-md lg:p-5 gap-4 text-base text-gray-800 font-semibold tracking-tight lg:justify-between">
-      <NavbarMenu />
+      <NavbarMenu svgs={svgs} />
       <label
         tabIndex={0}
         className="gap-2 btn btn-ghost text-lg font-bold invisible lg:visible"
