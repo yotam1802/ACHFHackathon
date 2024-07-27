@@ -58,7 +58,7 @@ export default function DashboardPage() {
   return (
     <div className="min-h-screen p-5">
       <div className="p-5 bg-black rounded-xl">
-        <h1 className="text-3xl font-bold text-white">Dashboard</h1>
+        <h1 className="text-3xl font-bold text-white">Doctor Dashboard</h1>
       </div>
       <div className="flex flex-col md:flex-row md:flex-wrap rounded-xl">
         <div className="w-full md:w-1/2 py-5 pr-3">
