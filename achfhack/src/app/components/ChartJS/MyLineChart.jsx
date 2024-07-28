@@ -55,6 +55,11 @@ const MyLineChart = ({ data }) => {
     <Line
       data={chartData}
       options={{
+        plugins: {
+          legend: {
+            display: false, // Disable the legend
+          },
+        },
         scales: {
           x: {
             type: "time",

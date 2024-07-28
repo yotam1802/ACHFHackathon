@@ -62,20 +62,19 @@ export default function DashboardPage() {
         <h1 className="text-3xl font-bold text-white">Doctor Dashboard</h1>
       </div>
       <div className="flex flex-col md:flex-row md:flex-wrap rounded-xl">
-        <div className="w-full md:w-1/2 py-5 pr-3">
+        <div className="w-full md:w-1/2">
           <div className="p-5 shadow-md rounded-md h-full">
             <h2 className="text-xl font-bold">Patient Trends</h2>
             <MyLineChart data={data} />
           </div>
         </div>
-        <div className="w-full md:w-1/2 py-5 pl-3 rounded-xl">
+        <div className="w-full md:w-1/2 rounded-xl">
           <div className="p-5 shadow-md rounded-md h-full">
             <h2 className="text-xl font-bold">Help Needed</h2>
             <HelpNeeded />
-            <p>Placeholder content</p>
           </div>
         </div>
-        <div className="w-full py-3 rounded-xl">
+        <div className="w-full rounded-xl">
           <div className="p-5 shadow-md rounded-md h-full">
             <h2 className="text-xl font-bold">Bottom Component</h2>
             <p>Placeholder content</p>

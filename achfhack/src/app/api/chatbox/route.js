@@ -60,9 +60,15 @@ export async function POST(req) {
       const db = client.db("HealthBridge");
       const collection = db.collection("helpNeeded");
 
+      // Extract the user's original message
+      const originalMessage = messages.find(
+        (msg) => msg.role === "user"
+      ).content;
+
       // Insert a document in the helpNeeded collection
       await collection.insertOne({
-        message: "help required for user 1",
+        message: "User 1 Requested Help",
+        originalMessage,
         timestamp: new Date(),
       });
 
