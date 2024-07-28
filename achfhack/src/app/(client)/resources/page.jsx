@@ -101,7 +101,7 @@ const ResourcesPage = () => {
           return (
             <div
               key={key}
-              className="card max-w-[450px] max-h-[450px] h-[450px] w-[450px] shadow-xl"
+              className="card max-w-[450px] max-h-[450px] h-[450px] w-[450px] shadow-lg opacity-90 hover:shadow-2xl hover:opacity-100"
             >
               <figure className="z-20">
                 <Image
