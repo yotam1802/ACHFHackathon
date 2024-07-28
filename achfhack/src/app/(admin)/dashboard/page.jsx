@@ -1,5 +1,6 @@
 import HelpNeeded from "@/app/components/DoctorDashboard/HelpNeeded";
 import MyLineChart from "../../components/ChartJS/MyLineChart";
+import TrendsPage from "@/app/components/DoctorDashboard/Trends";
 
 export default function DashboardPage() {
   const data = [
@@ -76,8 +77,8 @@ export default function DashboardPage() {
         </div>
         <div className="w-full rounded-xl">
           <div className="p-5 shadow-md rounded-md h-full">
-            <h2 className="text-xl font-bold">Bottom Component</h2>
-            <p>Placeholder content</p>
+            <h2 className="text-xl font-bold">Patient Trends</h2>
+            <TrendsPage />
           </div>
         </div>
       </div>

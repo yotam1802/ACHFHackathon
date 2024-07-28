@@ -60,6 +60,19 @@ export async function POST(req) {
       const db = client.db("HealthBridge");
       const collection = db.collection("helpNeeded");
 
+      const names = [
+        "John Doe",
+        "Jane Doe",
+        "Alice Smith",
+        "Bob Brown",
+        "Charlie Johnson",
+        "Daisy Miller",
+        "Edward Davis",
+        "Fiona Wilson",
+        "George White",
+      ];
+      const randomName = names[Math.floor(Math.random() * names.length)];
+
       // Extract the user's original message
       const originalMessage = messages.find(
         (msg) => msg.role === "user"
@@ -67,7 +80,7 @@ export async function POST(req) {
 
       // Insert a document in the helpNeeded collection
       await collection.insertOne({
-        message: "User 1 Requested Help",
+        message: `${randomName} Requested Help`,
         originalMessage,
         timestamp: new Date(),
       });

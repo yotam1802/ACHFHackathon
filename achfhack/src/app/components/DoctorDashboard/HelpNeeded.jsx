@@ -64,9 +64,12 @@ const HelpNeeded = () => {
           Up to date!
         </div>
       ) : (
-        <ul className="p-2 rounded-xl bg-slate-200">
+        <ul className="">
           {helpNeededData.map((item) => (
-            <li key={item._id} className="flex justify-between items-center">
+            <li
+              key={item._id}
+              className="flex justify-between items-center bg-slate-200 my-2 p-2 rounded-xl"
+            >
               <span>
                 {item.message} - {new Date(item.timestamp).toLocaleString()}
               </span>
