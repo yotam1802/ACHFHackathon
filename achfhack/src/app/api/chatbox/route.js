@@ -60,17 +60,7 @@ export async function POST(req) {
       const db = client.db("HealthBridge");
       const collection = db.collection("helpNeeded");
 
-      const names = [
-        "John Doe",
-        "Jane Doe",
-        "Alice Smith",
-        "Bob Brown",
-        "Charlie Johnson",
-        "Daisy Miller",
-        "Edward Davis",
-        "Fiona Wilson",
-        "George White",
-      ];
+      const names = ["John Doe", "Jane Doe", "Alice Smith"];
       const randomName = names[Math.floor(Math.random() * names.length)];
 
       // Extract the user's original message

@@ -13,6 +13,8 @@ export async function GET() {
     const db = client.db("HealthBridge");
     const collection = db.collection("clientData");
 
+    await db.collection("clientData").deleteMany({});
+
     const data = [
       {
         date: "2024-01-01",
@@ -298,10 +300,10 @@ export async function GET() {
       },
       {
         date: "2024-02-17",
-        rating: 24,
+        rating: 14,
         name: "Alice Smith",
-        questionResponse: [3, 3, 3, 3, 3, 3, 2, 2, 2],
-      }, // dip
+        questionResponse: [1, 1, 1, 3, 1, 2, 2, 2, 1],
+      },
       {
         date: "2024-02-18",
         rating: 23,
@@ -316,9 +318,9 @@ export async function GET() {
       },
       {
         date: "2024-02-20",
-        rating: 22,
+        rating: 12,
         name: "Alice Smith",
-        questionResponse: [3, 3, 3, 3, 3, 2, 2, 2, 1],
+        questionResponse: [1, 1, 1, 1, 1, 2, 2, 2, 1],
       },
     ];
 

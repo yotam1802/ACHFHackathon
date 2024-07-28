@@ -22,17 +22,7 @@ export default function CheckupPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const names = [
-      "John Doe",
-      "Jane Doe",
-      "Alice Smith",
-      "Bob Brown",
-      "Charlie Johnson",
-      "Daisy Miller",
-      "Edward Davis",
-      "Fiona Wilson",
-      "George White",
-    ];
+    const names = ["John Doe", "Jane Doe", "Alice Smith"];
     const randomName = names[Math.floor(Math.random() * names.length)];
 
     try {
@@ -65,17 +55,7 @@ export default function CheckupPage() {
   };
 
   const handleAlertDoctor = async () => {
-    const names = [
-      "John Doe",
-      "Jane Doe",
-      "Alice Smith",
-      "Bob Brown",
-      "Charlie Johnson",
-      "Daisy Miller",
-      "Edward Davis",
-      "Fiona Wilson",
-      "George White",
-    ];
+    const names = ["John Doe", "Jane Doe", "Alice Smith"];
     const randomName = names[Math.floor(Math.random() * names.length)];
     const alertData = {
       message: `${randomName} Requested Help`,

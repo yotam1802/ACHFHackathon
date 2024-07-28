@@ -78,7 +78,7 @@ const ResponsesPage = () => {
       case 11:
         return "bg-red-500";
       default:
-        return "bg-gray-200";
+        return "bg-gray-100";
     }
   };
 
@@ -87,9 +87,9 @@ const ResponsesPage = () => {
       <div className="p-5 bg-black rounded-xl mb-5">
         <h1 className="text-3xl font-bold text-white">Responses</h1>
       </div>
-      <div className="overflow-x-auto">
-        <div className="overflow-y-auto" style={{ maxHeight: "500px" }}>
-          <table className="table-auto w-full">
+      <div>
+        <div className="overflow-y-auto">
+          <table className="table-auto">
             <thead>
               <tr>
                 <th className="px-4 py-2">User</th>
@@ -112,7 +112,7 @@ const ResponsesPage = () => {
                       <td
                         key={date}
                         className={`border px-4 py-2 ${
-                          response ? getColor(response.rating) : "bg-gray-200"
+                          response ? getColor(response.rating) : "bg-gray-100"
                         }`}
                       ></td>
                     );
