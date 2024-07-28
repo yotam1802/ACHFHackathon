@@ -38,8 +38,11 @@ const ResponsesPage = () => {
 
   // Get unique users
   const users = [...new Set(data.map((item) => item.name))];
-  // Get unique dates
-  const dates = [...new Set(data.map((item) => item.date))];
+
+  // Get unique dates and sort them in descending order, then slice to get the 10 most recent dates
+  const dates = [...new Set(data.map((item) => item.date))]
+    .sort((a, b) => new Date(b) - new Date(a))
+    .slice(0, 10);
 
   // Get color based on rating
   const getColor = (rating) => {
@@ -49,7 +52,6 @@ const ResponsesPage = () => {
       case 25:
       case 26:
         return "bg-green-500";
-
       case 18:
       case 19:
       case 20:
@@ -87,9 +89,34 @@ const ResponsesPage = () => {
       <div className="p-5 bg-black rounded-xl mb-5">
         <h1 className="text-3xl font-bold text-white">Responses</h1>
       </div>
-      <div>
-        <div className="overflow-y-auto">
-          <table className="table-auto">
+      <div className="mt-5 p-5 bg-gray-200 rounded-lg mb-3">
+        <h2 className="text-2xl font-bold mb-3">Legend</h2>
+        <div className="flex flex-wrap">
+          <div className="flex items-center mb-2 mr-4">
+            <div className="w-4 h-4 bg-green-500 mr-2"></div>
+            <span>24-27: Excellent</span>
+          </div>
+          <div className="flex items-center mb-2 mr-4">
+            <div className="w-4 h-4 bg-green-300 mr-2"></div>
+            <span>18-23: Good</span>
+          </div>
+          <div className="flex items-center mb-2 mr-4">
+            <div className="w-4 h-4 bg-yellow-300 mr-2"></div>
+            <span>12-17: Average</span>
+          </div>
+          <div className="flex items-center mb-2 mr-4">
+            <div className="w-4 h-4 bg-red-500 mr-2"></div>
+            <span>0-11: Poor</span>
+          </div>
+          <div className="flex items-center mb-2 mr-4">
+            <div className="w-4 h-4 bg-gray-100 mr-2"></div>
+            <span>No Data</span>
+          </div>
+        </div>
+      </div>
+      <div className="overflow-x-auto">
+        <div className="overflow-y-auto" style={{ maxHeight: "500px" }}>
+          <table className="table-auto w-full">
             <thead>
               <tr>
                 <th className="px-4 py-2">User</th>
