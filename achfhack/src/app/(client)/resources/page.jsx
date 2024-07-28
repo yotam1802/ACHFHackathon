@@ -49,9 +49,7 @@ const ResourcesPage = () => {
 
   return (
     <div className="p-5 flex flex-col gap-5 mb-20 md:mb-10">
-      <div className="p-5 bg-black rounded-xl">
-        <h1 className="text-3xl font-bold text-white">Resources</h1>
-      </div>
+      <h1 className="text-3xl font-bold text-black p-5">Resources</h1>
       <div className="stats stats-vertical lg:stats-horizontal shadow">
         <div className="stat">
           <div className="stat-title">Mental Disorders</div>

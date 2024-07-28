@@ -47,7 +47,9 @@ export default function DashboardPage({ initialData }) {
 
   return (
     <div className="min-h-screen p-5">
-      <h1 className="text-3xl font-bold mb-4 text-black">Doctor Dashboard</h1>
+      <h1 className="text-3xl font-bold mb-4 text-black p-5">
+        Doctor Dashboard
+      </h1>
       <div className="flex flex-col md:flex-row md:flex-wrap rounded-xl">
         {loading ? (
           <div>Loading...</div>

@@ -126,9 +126,7 @@ export default function CheckupPage() {
           <span>Doctor alerted</span>
         </div>
       )}
-      <div className="p-5 bg-black rounded-xl">
-        <h1 className="text-3xl font-bold text-white">Checkup Form</h1>
-      </div>
+      <h1 className="text-3xl font-bold text-black p-5">Checkup Form</h1>
       <h3 className="font-semibold text-lg px-5">
         Over the last 2 weeks, how often have you been bothered by any of the
         following problems?
