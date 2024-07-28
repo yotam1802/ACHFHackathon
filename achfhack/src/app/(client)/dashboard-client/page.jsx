@@ -70,7 +70,7 @@ export default function ClientPage() {
         </div>
         <div className="flex flex-col items-center md:flex-row gap-2">
           <FontAwesomeIcon icon={faUserDoctor} size="2xl" />
-          You can contact your doctor at 587-664-9026.
+          You can contact your doctor at 403-899-9213.
         </div>
       </div>
     </div>
