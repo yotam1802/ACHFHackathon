@@ -1,7 +1,27 @@
 "use client";
+import { useEffect, useRef } from "react";
 import Chatbot from "../../components/Chatbox";
+import Lottie from "lottie-web";
 
 export default function ClientPage() {
+  const animationContainer = useRef(null);
+
+  useEffect(() => {
+    if (animationContainer.current) {
+      const animationInstance = Lottie.loadAnimation({
+        container: animationContainer.current,
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        path: "/fire.json",
+      });
+
+      return () => {
+        animationInstance.destroy(); // Clean up the animation instance on unmount
+      };
+    }
+  }, []);
+
   return (
     <div className="p-5 flex flex-col gap-5 mb-20 lg:mb-10">
       <h1 className="text-3xl font-bold text-black p-5">Patient Dashboard</h1>
@@ -31,15 +51,21 @@ export default function ClientPage() {
       </div>
       <Chatbot />
       <div className="divider my-0"></div>
-      <div className="flex flex-col items-center md:flex-row gap-5 p-5">
-        <div
-          className="radial-progress"
-          style={{ "--value": 40 }}
-          role="progressbar"
-        >
-          40%
+      <div className="flex flex-col items-center lg:flex-row gap-x-20 gap-y-10 p-5">
+        <div className="flex flex-col items-center md:flex-row gap-5">
+          <div
+            className="radial-progress"
+            style={{ "--value": 40 }}
+            role="progressbar"
+          >
+            40%
+          </div>
+          <div>You have improved by 40% this month!</div>
         </div>
-        <div>You have improved by 40% this month!</div>
+        <div className="flex flex-col items-center md:flex-row">
+          <div ref={animationContainer} className="max-w-16"></div>
+          <div>You are on a 3 week improvement streak!</div>
+        </div>
       </div>
     </div>
   );
