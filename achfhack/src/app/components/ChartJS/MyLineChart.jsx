@@ -20,19 +20,19 @@ const MyLineChart = ({ data }) => {
 
   useEffect(() => {
     if (data && data.length > 0) {
-      const groupedData = data.reduce((acc, { date, rating, userId }) => {
-        if (!acc[userId]) {
-          acc[userId] = [];
+      const groupedData = data.reduce((acc, { date, rating, name }) => {
+        if (!acc[name]) {
+          acc[name] = [];
         }
-        acc[userId].push({ date, rating });
+        acc[name].push({ date, rating });
         return acc;
       }, {});
 
       console.log(groupedData);
 
-      const datasets = Object.keys(groupedData).map((userId, index) => ({
-        label: userId,
-        data: groupedData[userId].map((entry) => ({
+      const datasets = Object.keys(groupedData).map((name, index) => ({
+        label: name,
+        data: groupedData[name].map((entry) => ({
           x: entry.date,
           y: entry.rating,
         })),
@@ -72,6 +72,8 @@ const MyLineChart = ({ data }) => {
             },
           },
           y: {
+            min: 0, // Set the minimum value for the y-axis
+            max: 27, // Set the maximum value for the y-axis
             title: {
               display: true,
               text: "Rating",

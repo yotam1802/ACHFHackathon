@@ -1,4 +1,10 @@
-import clientPromise from "../../lib/mongodb";
+import clientPromise from "@/app/lib/mongodb";
+
+export const config = {
+  api: {
+    bodyParser: true, // Use built-in body parser
+  },
+};
 
 export async function POST(req) {
   try {
@@ -33,8 +39,27 @@ export async function POST(req) {
   }
 }
 
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
+export async function GET(req) {
+  try {
+    const client = await clientPromise;
+    const db = client.db("HealthBridge");
+    const collection = db.collection("clientData");
+
+    const data = await collection.find({}).toArray();
+
+    return new Response(JSON.stringify(data), {
+      status: 200,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return new Response(JSON.stringify({ message: "Internal server error" }), {
+      status: 500,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  }
+}
