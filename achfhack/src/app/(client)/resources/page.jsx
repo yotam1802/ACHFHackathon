@@ -103,7 +103,7 @@ const ResourcesPage = () => {
               key={key}
               className="card max-w-[450px] max-h-[450px] h-[450px] w-[450px] shadow-xl"
             >
-              <figure>
+              <figure className="z-20">
                 <Image
                   className="w-full object-cover overflow-hidden"
                   src={resource.image}

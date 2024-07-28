@@ -6,7 +6,7 @@ import achf from "/public/achf.png";
 
 export default async function Navbar({ svgs }) {
   return (
-    <div className="fixed bottom-0 left-0 right-0 h-16 md:h-20 rounded-t-box menu menu-horizontal bg-base-200 lg:menu-vertical lg:rounded-box lg:rounded-l-none lg:min-h-screen lg:w-56 lg:shadow-md lg:p-5 gap-4 text-base text-gray-800 font-semibold tracking-tight lg:justify-between">
+    <div className="fixed bottom-0 left-0 right-0 h-16 md:h-20 rounded-t-box menu menu-horizontal bg-base-200 lg:menu-vertical lg:rounded-box lg:rounded-l-none lg:min-h-screen lg:w-56 lg:shadow-md lg:p-5 gap-4 text-base text-gray-800 font-semibold tracking-tight lg:justify-between z-50">
       <NavbarMenu svgs={svgs} />
       <label
         tabIndex={0}

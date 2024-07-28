@@ -13,7 +13,7 @@ export default function NavbarMenu({ svgs }) {
 
   return (
     <ul className="flex lg:flex-col md:gap-3 justify-around w-full">
-      <div className="flex items-center">
+      <div className="hidden lg:flex lg:items-center lg:mb-8">
         <Image
           src={achf}
           alt="Logo"
