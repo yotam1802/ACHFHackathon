@@ -2,6 +2,8 @@
 import { useEffect, useRef } from "react";
 import Chatbot from "../../components/Chatbox";
 import Lottie from "lottie-web";
+import { faUserDoctor } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function ClientPage() {
   const animationContainer = useRef(null);
@@ -53,7 +55,7 @@ export default function ClientPage() {
       </div>
       <Chatbot />
       <div className="divider my-0"></div>
-      <div className="flex flex-col items-center lg:flex-row gap-x-20 gap-y-10 p-5">
+      <div className="flex flex-col items-center lg:justify-evenly lg:flex-row gap-x-20 gap-y-10 p-5">
         <div className="flex flex-col items-center md:flex-row gap-5">
           <div
             className="radial-progress"
@@ -67,6 +69,10 @@ export default function ClientPage() {
         <div className="flex flex-col items-center md:flex-row">
           <div ref={animationContainer} className="max-w-16"></div>
           <div>You are on a 3 week improvement streak!</div>
+        </div>
+        <div className="flex flex-col items-center md:flex-row gap-2">
+          <FontAwesomeIcon icon={faUserDoctor} size="2xl" />
+          You can contact your doctor at 587-664-9026.
         </div>
       </div>
     </div>
