@@ -63,7 +63,7 @@ export default function CheckupPage() {
       <div className="p-5 bg-black rounded-xl">
         <h1 className="text-3xl font-bold text-white">Checkup Form</h1>
       </div>
-      <h3>
+      <h3 className="font-semibold text-lg">
         Over the last 2 weeks, how often have you been bothered by any of the
         following problems?
       </h3>
