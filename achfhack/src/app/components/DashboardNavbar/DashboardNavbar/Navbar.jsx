@@ -1,7 +1,8 @@
 import Image from "next/image";
-import profilePicPlaceholder from "../../../../../public/profile-pic-placeholder.png";
+import profilePicPlaceholder from "/public/profile-pic-placeholder.png";
 import SignoutButton from "./SignoutButton";
 import NavbarMenu from "./NavbarMenu";
+import achf from "/public/achf.png";
 
 export default async function Navbar({ svgs }) {
   return (

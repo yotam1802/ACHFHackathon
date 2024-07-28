@@ -4,6 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+import achf from "/public/achf.png";
+import Image from "next/image";
 
 export default function NavbarMenu({ svgs }) {
   const pathname = usePathname();
@@ -11,6 +13,15 @@ export default function NavbarMenu({ svgs }) {
 
   return (
     <ul className="flex lg:flex-col md:gap-3 justify-around w-full">
+      <div className="flex items-center">
+        <Image
+          src={achf}
+          alt="Logo"
+          width={500}
+          height={500}
+          className="w-44 px-1 md:px-5"
+        />
+      </div>
       {svgs.map((svg, key) => {
         return (
           <li key={key}>
