@@ -1,10 +1,9 @@
 import Navbar from "../components/DashboardNavbar/DashboardNavbar/Navbar";
-import { faHome, faList, faChartBar } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faList } from "@fortawesome/free-solid-svg-icons";
 
 const svgs = [
   { name: "Home", icon: faHome, route: "/dashboard" },
   { name: "Responses", icon: faList, route: "/responses" },
-  { name: "Statistics", icon: faChartBar, route: "/statistics" },
 ];
 
 export default function DashboardLayout({ children }) {
