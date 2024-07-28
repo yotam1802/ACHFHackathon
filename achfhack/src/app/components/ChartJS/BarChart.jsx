@@ -36,11 +36,11 @@ const BarChart = ({ data }) => {
     responsive: true,
     plugins: {
       legend: {
-        position: "top",
+        display: false, // Disable the legend
       },
       title: {
         display: true,
-        text: "Number of Responses per name",
+        text: "Number of Responses By Person",
       },
     },
   };
