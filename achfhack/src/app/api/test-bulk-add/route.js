@@ -318,9 +318,9 @@ export async function GET() {
       },
       {
         date: "2024-02-20",
-        rating: 12,
+        rating: 7,
         name: "Alice Smith",
-        questionResponse: [1, 1, 1, 1, 1, 2, 2, 2, 1],
+        questionResponse: [1, 1, 1, 1, 1, 1, 1, 0, 0],
       },
     ];
 

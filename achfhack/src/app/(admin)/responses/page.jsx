@@ -1,9 +1,14 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { FaSort, FaSortUp, FaSortDown } from "react-icons/fa";
 
 const ResponsesPage = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [sortConfig, setSortConfig] = useState({
+    key: "question",
+    direction: "ascending",
+  });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,6 +32,61 @@ const ResponsesPage = () => {
 
     fetchData();
   }, []);
+
+  const calculateAverageAndTotalPoints = (data) => {
+    const questionPoints = {};
+    const questionCounts = {};
+
+    data.forEach((item) => {
+      item.questionResponse.forEach((response, index) => {
+        if (!questionPoints[index]) {
+          questionPoints[index] = 0;
+          questionCounts[index] = 0;
+        }
+        questionPoints[index] += response;
+        questionCounts[index] += 1;
+      });
+    });
+
+    const pointsData = Object.keys(questionPoints).map((index) => ({
+      question: `Q${parseInt(index) + 1}`,
+      average: questionPoints[index] / questionCounts[index],
+      total: questionPoints[index],
+    }));
+
+    return pointsData;
+  };
+
+  const sortData = (data, key, direction) => {
+    return [...data].sort((a, b) => {
+      if (a[key] < b[key]) {
+        return direction === "ascending" ? -1 : 1;
+      }
+      if (a[key] > b[key]) {
+        return direction === "ascending" ? 1 : -1;
+      }
+      return 0;
+    });
+  };
+
+  const handleSort = (key) => {
+    let direction = "ascending";
+    if (sortConfig.key === key && sortConfig.direction === "ascending") {
+      direction = "descending";
+    }
+    setSortConfig({ key, direction });
+  };
+
+  const getSortIcon = (key) => {
+    if (sortConfig.key === key) {
+      return sortConfig.direction === "ascending" ? (
+        <FaSortUp />
+      ) : (
+        <FaSortDown />
+      );
+    }
+    return <FaSort />;
+  };
 
   if (loading) {
     return <div className="p-5">Loading...</div>;
@@ -84,11 +144,16 @@ const ResponsesPage = () => {
     }
   };
 
+  const pointsData = calculateAverageAndTotalPoints(data);
+  const sortedPointsData = sortData(
+    pointsData,
+    sortConfig.key,
+    sortConfig.direction
+  );
+
   return (
     <div className="p-5">
-      <div className="p-5 bg-black rounded-xl mb-5">
-        <h1 className="text-3xl font-bold text-white">Responses</h1>
-      </div>
+      <h1 className="text-3xl font-bold text-black mb-4">Responses</h1>
       <div className="mt-5 p-5 bg-gray-200 rounded-lg mb-3">
         <h2 className="text-2xl font-bold mb-3">Legend</h2>
         <div className="flex flex-wrap">
@@ -149,6 +214,54 @@ const ResponsesPage = () => {
             </tbody>
           </table>
         </div>
+      </div>
+      <div className="mt-5 p-5 bg-gray-200 rounded-lg">
+        <h2 className="text-2xl font-bold mb-3">
+          Average and Total Points per Question
+        </h2>
+        <table className="table-auto w-full">
+          <thead>
+            <tr>
+              <th
+                className="px-4 py-2 cursor-pointer"
+                onClick={() => handleSort("question")}
+              >
+                <div className="flex items-center justify-center">
+                  Question {getSortIcon("question")}
+                </div>
+              </th>
+              <th
+                className="px-4 py-2 cursor-pointer"
+                onClick={() => handleSort("average")}
+              >
+                <div className="flex items-center justify-center">
+                  Average Points {getSortIcon("average")}
+                </div>
+              </th>
+              <th
+                className="px-4 py-2 cursor-pointer"
+                onClick={() => handleSort("total")}
+              >
+                <div className="flex items-center justify-center">
+                  Total Points {getSortIcon("total")}
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {sortedPointsData.map((item) => (
+              <tr key={item.question}>
+                <td className="border px-4 py-2 text-center">
+                  {item.question}
+                </td>
+                <td className="border px-4 py-2 text-center">
+                  {item.average.toFixed(2)}
+                </td>
+                <td className="border px-4 py-2 text-center">{item.total}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
