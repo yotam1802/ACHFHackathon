@@ -4,21 +4,20 @@ export default function Home() {
   return (
     <main>
       <div
-        className="min-h-screen hero"
-        style={{ backgroundImage: "url(/tfdl.jpg)" }}
+        className="min-h-screen hero object-cover overflow-hidden"
+        style={{ backgroundImage: "url(/hero.jpg)" }}
       >
-        <div className="hero-overlay bg-opacity-60 backdrop-blur-xs"></div>
-        <div className="hero-content text-neutral-content text-center">
+        <div className="hero-overlay backdrop-blur-sm bg-inherit"></div>
+        <div className="hero-content text-neutral-content text-center mt-auto mb-5 lg:mb-20">
           <div>
-            <h1 className="mb-5 text-5xl md:text-7xl font-extrabold text-ucalgaryGold uppercase">
-              Explore the University of Calgary
+            <h1 className="mb-5 text-5xl md:text-7xl lg:text-8xl font-extrabold uppercase text-emerald-500">
+              HealthBridge
             </h1>
-            <h2 className="text-xl md:text-3xl px-4 mb-5">
-              Your go-to resource for navigating campus life.
+            <h2 className="text-xl md:text-3xl px-4 mb-5 text-emerald-500">
+              Connecting youth with essential mental health resources.
             </h2>
-
-            <button className="btn bg-red-600 text-gray-100 border-none hover:bg-red-800 btn-wide mb-5 font-bold shadow-2xl">
-              Get started now
+            <button className="btn bg-emerald-500 text-gray-100 border-none hover:bg-emerald-400 btn-wide mb-5 font-bold shadow-2xl">
+              Connect now
             </button>
           </div>
         </div>
