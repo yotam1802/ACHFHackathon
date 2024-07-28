@@ -26,9 +26,7 @@ export default function ClientPage() {
 
   return (
     <div className="p-5 flex flex-col gap-5 mb-20 lg:mb-10">
-      <div className="bg-black p-5 rounded-xl">
-        <h1 className="text-3xl text-white font-bold">Patient Dashboard</h1>
-      </div>
+      <h1 className="text-3xl font-bold text-black p-5">Patient Dashboard</h1>
       <div className="p-5">
         <div role="alert" className="alert shadow-lg">
           <svg
