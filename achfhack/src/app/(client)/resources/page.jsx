@@ -14,35 +14,35 @@ const ResourcesPage = () => {
       title: "Youth Mental Health Canada",
       description:
         "An advocacy organization focused on youth mental health education, support, and empowerment.",
-      image: "/resources/ymhca.jpg",
+      image: "/resources/ymhca.png",
       tag: "Advocacy",
     },
     {
       title: "Foundry",
       description:
         "Provides health and wellness resources, services, and support for young people aged 12-24.",
-      image: "",
+      image: "/resources/foundry.webp",
       tag: "Health Services",
     },
     {
       title: "Jack.org",
       description:
         "A network of young leaders transforming the way we think about mental health.",
-      image: "",
+      image: "/resources/jack.jpg",
       tag: "Leadership",
     },
     {
       title: "Canadian Mental Health Association",
       description:
         "Offers resources and support for mental health issues across Canada.",
-      image: "",
+      image: "/resources/cmha.jpg",
       tag: "Support",
     },
     {
       title: "MindYourMind",
       description:
         "Provides resources and interactive tools to help youth manage mental health challenges.",
-      image: "",
+      image: "/resources/mym.png",
       tag: "Tools",
     },
   ];
