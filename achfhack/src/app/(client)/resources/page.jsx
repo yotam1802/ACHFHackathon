@@ -123,6 +123,47 @@ const ResourcesPage = () => {
           );
         })}
       </div>
+      <div className="mt-10">
+        <h2 className="text-2xl font-bold mb-4">Contact Information</h2>
+        <div className="flex flex-col gap-4">
+          <div className="p-4 bg-gray-100 rounded-lg shadow-md">
+            <h3 className="text-xl font-semibold">Emergency Help</h3>
+            <p>If you are in immediate danger, please call 911.</p>
+          </div>
+          <div className="p-4 bg-gray-100 rounded-lg shadow-md">
+            <h3 className="text-xl font-semibold">Kids Help Phone</h3>
+            <p>Phone: 1-800-668-6868</p>
+            <p>Text: CONNECT to 686868</p>
+            <p>
+              Website:{" "}
+              <a
+                href="https://kidshelpphone.ca"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 underline"
+              >
+                kidshelpphone.ca
+              </a>
+            </p>
+          </div>
+          <div className="p-4 bg-gray-100 rounded-lg shadow-md">
+            <h3 className="text-xl font-semibold">Crisis Services Canada</h3>
+            <p>Phone: 1-833-456-4566</p>
+            <p>Text: 45645</p>
+            <p>
+              Website:{" "}
+              <a
+                href="https://www.crisisservicescanada.ca/en/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 underline"
+              >
+                crisisservicescanada.ca
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
