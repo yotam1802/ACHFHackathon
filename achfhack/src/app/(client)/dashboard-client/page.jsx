@@ -3,12 +3,10 @@ import Chatbot from "../../components/Chatbox";
 
 export default function ClientPage() {
   return (
-    <div className="p-5 flex flex-col gap-5">
+    <div className="p-5 flex flex-col gap-5 mb-20 lg:mb-10">
       <div className="bg-black p-5 rounded-xl">
         <h1 className="text-3xl text-white font-bold">Patient Dashboard</h1>
       </div>
-      <Chatbot />
-      <div className="divider my-0"></div>
       <div className="p-5">
         <div role="alert" className="alert shadow-lg">
           <svg
@@ -32,6 +30,18 @@ export default function ClientPage() {
           </div>
           <button className="btn btn-sm">View details</button>
         </div>
+      </div>
+      <Chatbot />
+      <div className="divider my-0"></div>
+      <div className="flex flex-col items-center md:flex-row gap-5 p-5">
+        <div
+          className="radial-progress"
+          style={{ "--value": 40 }}
+          role="progressbar"
+        >
+          40%
+        </div>
+        <div>You have improved by 40% this month!</div>
       </div>
     </div>
   );
