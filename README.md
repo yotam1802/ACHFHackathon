@@ -2,7 +2,7 @@
 <img width="275" alt="ACHF Logo" src="https://github.com/user-attachments/assets/ee03bc04-ae2b-4437-90c3-d25851a9b779">
 
 
-# HealthBridge
+# HealthBridge | Alberta Health Hackathon Winner
 
 HealthBridge is a dynamic doctor and patient dashboard to address the need for more accessible and cheaper resources in the mental health sector. Our platform bridges the communication gap between healthcare providers and patients, leveraging technology to facilitate more efficient interactions and improve mental health.
 
