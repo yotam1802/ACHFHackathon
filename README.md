@@ -1,5 +1,5 @@
 
-![Logo](https://d112y698adiu2z.cloudfront.net/photos/production/challenge_photos/002/934/245/datas/original.png)
+<img width="275" alt="ACHF Logo" src="https://github.com/user-attachments/assets/ee03bc04-ae2b-4437-90c3-d25851a9b779">
 
 
 # HealthBridge
@@ -9,9 +9,9 @@ HealthBridge is a dynamic doctor and patient dashboard to address the need for m
 
 ## Demo
 
-**Video Demo:** https://youtu.be/qNQdySi-F5g
+[Video Demo](https://youtu.be/qNQdySi-F5g)
 
-**Devpost:** https://devpost.com/software/healthbridge-rxp3ym
+[DevPost](https://devpost.com/software/healthbridge-rxp3ym)
 
 
 ## Tech Stack
@@ -40,15 +40,19 @@ HealthBridge is a dynamic doctor and patient dashboard to address the need for m
 ## Screenshots
 
 **Doctor Dashboard:**
+
 ![App Screenshot](https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/966/537/datas/gallery.jpg)
 
 **Patient Responses:**
+
 ![App Screenshot](https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/966/535/datas/gallery.jpg)
 
 **Patient Checkup Form:**
+
 ![App Screenshot](https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/966/536/datas/gallery.jpg)
 
 **Patient Resources:**
+
 ![App Screenshot](https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/966/538/datas/gallery.jpg)
 
 
